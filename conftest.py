@@ -1,7 +1,6 @@
 from playwright.sync_api import Page, expect
-from data import CREDENTIALS, PRODUCT_DATA
+from test_data import CREDENTIALS, PRODUCT_DATA
 import pytest
-
 
 @pytest.fixture
 def auth_page(page: Page):
@@ -12,7 +11,6 @@ def auth_page(page: Page):
     page.locator("#login-button").click()
 
     return page
-
 
 @pytest.fixture
 def auth_page_with_cart(auth_page):

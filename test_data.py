@@ -1,8 +1,9 @@
-#Prihlasovacie data
 CREDENTIALS = {
     "username": "standard_user",
     "password": "secret_sauce"
 }
+
+TAX_RATE = 0.08
 
 TC05_ORDER_DATA = {
     "first_name": "John",

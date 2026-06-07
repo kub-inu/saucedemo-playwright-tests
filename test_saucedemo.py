@@ -1,6 +1,6 @@
 from playwright.sync_api import Page, expect
-from help_functions import summary_price
-from test_data import CREDENTIALS, PRODUCT_DATA, TC05_ORDER_DATA, TAX_RATE
+from src.helpers import summary_price
+from src.test_data import CREDENTIALS, PRODUCT_DATA, TC05_ORDER_DATA, TAX_RATE
 import pytest
 
 def test_tc01_login_user_with_valid_credentials(page: Page) -> None:

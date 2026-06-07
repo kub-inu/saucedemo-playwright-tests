@@ -1,5 +1,5 @@
 from playwright.sync_api import Page, expect
-from test_data import CREDENTIALS, PRODUCT_DATA
+from src.test_data import CREDENTIALS, PRODUCT_DATA
 import pytest
 
 @pytest.fixture

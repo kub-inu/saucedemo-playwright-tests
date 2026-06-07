@@ -131,7 +131,7 @@ def test_tc04_submit_invalid_order(auth_page_with_cart: Page, first_name: str, l
     """
     page = auth_page_with_cart
 
-    # Přechod na stránku nákupního košíku
+    # Přechod na stránku nákupního košíku (výchozí stav testu)
     page.goto("https://www.saucedemo.com/cart.html")
 
     # 1. Kliknutí na tlačítko 'Checkout' a ověření přesměrování
@@ -235,6 +235,10 @@ def test_tc05_submit_order(auth_page_with_cart: Page) -> None:
         title,
         "Na stránce se nezobrazuje text 'Thank you for your order!'."
     ).to_have_text("Thank you for your order!")
+
+    # Ověření, že ikona nákupního košíku nezobrazuje badge
+    badge = page.locator('#shopping_cart_container > a > span')
+    expect(badge, "Badge při ikone nákupního košíku je nadale viditelné.").not_to_be_visible()
 
 def test_tc06_logout_user(auth_page: Page) -> None:
     """
